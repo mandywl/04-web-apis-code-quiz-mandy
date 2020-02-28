@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 80%;
   width: 50%;
 }
 
@@ -51,4 +51,10 @@ h1 {
 .highscores {
   color: #563d7c;
   text-decoration: none;
+}
+
+.score {
+  background-color: #BE90D4;
+  padding-left: 10px;
+  width: 50%;
 }
