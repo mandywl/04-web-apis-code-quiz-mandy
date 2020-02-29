@@ -58,3 +58,7 @@ h1 {
   padding-left: 10px;
   width: 50%;
 }
+
+.error {
+  color: red;
+}
