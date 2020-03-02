@@ -62,3 +62,7 @@ h1 {
 .error {
   color: red;
 }
+
+#clear {
+  margin-left: 20px;
+}
