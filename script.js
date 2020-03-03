@@ -54,7 +54,7 @@ var questions = [
     questionHeading:
       "String values must be enclosed within_______ when being assigned to variables.",
     answers: ["commas", "curly brackets", "quotes", "parentheses"],
-    correctAnswer: "commas"
+    correctAnswer: "quotes"
   },
   {
     questionHeading:
@@ -65,7 +65,7 @@ var questions = [
       "for loops",
       "console log"
     ],
-    correctAnswer: "console.log"
+    correctAnswer: "console log"
   }
 ];
 
