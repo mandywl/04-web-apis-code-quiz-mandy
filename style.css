@@ -10,6 +10,14 @@
   width: 80%;
 }
 
+.col-2 {
+  padding-left: 0;
+}
+
+.row {
+  width: 100%;
+}
+
 body,
 html {
   height: 100%;
@@ -56,7 +64,7 @@ h1 {
 .score {
   background-color: #BE90D4;
   padding-left: 10px;
-  width: 50%;
+  width: 50%; 
 }
 
 .error {
@@ -65,4 +73,21 @@ h1 {
 
 #clear {
   margin-left: 20px;
+}
+
+#email {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 575px) {
+  .score {
+    width: 100%;
+  }
+  .highScoreButton {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  #clear {
+    margin-left: 0;
+  }
 }

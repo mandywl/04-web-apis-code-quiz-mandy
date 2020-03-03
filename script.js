@@ -108,8 +108,8 @@ function displayHighScore() {
   $("h1").text("Highscores");
   $(".questions").append('<p class=score>' + '</p>');
   $(".questions").append('<p class=button>' + '</p>');
-  $('.button').append('<a href="index.html" class="btn btn-primary">' + 'Go Back' + '</a>');
-  $('.button').append('<a href="#" id="clear" class="btn btn-primary">' + 'Clear Highscores' + '</a>');
+  $('.button').append('<a href="index.html" class="btn btn-primary highScoreButton">' + 'Go Back' + '</a>');
+  $('.button').append('<a href="#" id="clear" class="btn btn-primary highScoreButton">' + 'Clear Highscores' + '</a>');
   if (emailArray[0] === null) {
     $('.score').empty();
     $('.score').append("There is no score at the moment. Please go back to home page.");
