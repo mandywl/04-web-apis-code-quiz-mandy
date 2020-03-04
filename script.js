@@ -4,6 +4,7 @@ var timeLeft = 60;
 var page = 0;
 var timeInterval;
 var user = 1;
+var score;
 
 var scoreArray = [];
 var emailArray = [];
@@ -80,23 +81,27 @@ function displayQuestions(page) {
   $("h1").empty();
   $("p").remove();
   $("#start").remove();
-
-
   $(".questionHeading").empty();
   $("#answers").empty();
-
-  $(".questionHeading").append(questions[page].questionHeading);
-  for (var i = 0; i < questions[page].answers.length; i++) {
-    $("#answers")
-      .append("<li>" + "<a href='#' class='btn btn-primary'>" + questions[page].answers[i] + "</a>" + "</li>");
-  }
-
   $("hr").remove("hr");
   $(".result").remove("");
+
+  if (page < questions.length) {
+    $(".questionHeading").append(questions[page].questionHeading);
+    for (var i = 0; i < questions[page].answers.length; i++) {
+      $("#answers")
+        .append("<li>" + "<a href='#' class='btn btn-primary'>" + questions[page].answers[i] + "</a>" + "</li>");
+    }
+  } else {
+    clearInterval(timeInterval);
+    localStorage.setItem("timeLeft", timeLeft);
+    displayScore();
+  }
+
 }
 
 function displayHighScore() {
-  scoreArray.push(parseInt(localStorage.getItem("timeLeft")) + 1);
+  scoreArray.push(parseInt(score));
   emailArray.push(localStorage.getItem("email"));
   console.log(emailArray[0]);
   $(".container").removeClass("center text-center");
@@ -128,7 +133,7 @@ function displayHighScore() {
 }
 
 function displayScore() {
-  var score = parseInt(localStorage.getItem("timeLeft")) + 1;
+  score = parseInt(localStorage.getItem("timeLeft")) + 1;
   if (score) {
     score = parseInt(localStorage.getItem("timeLeft")) + 1;
   } else {
@@ -159,9 +164,6 @@ function displayScore() {
 }
 
 
-
-
-
 $(document).ready(function () {
   $('#start').on("click", function (event) {
     timerCountDown();
@@ -173,24 +175,19 @@ $(document).ready(function () {
     var index = event.target.id;
     var element = $(event.target).text();
     var result;
-    if (page < questions.length - 1) {
-      if (element == questions[page].correctAnswer) {
-        result = "Correct";
-      } else {
-        timeLeft = timeLeft - 10;
-        result = "Wrong";
-      }
-      $("#answers").append("<hr>");
-      $("hr").append("<p class='result'>" + result + "</p>");
-      setTimeout(function () {
-        page++;
-        displayQuestions(page);
-      }, 500);
+
+    if (element == questions[page].correctAnswer) {
+      result = "Correct";
     } else {
-      clearInterval(timeInterval);
-      localStorage.setItem("timeLeft", timeLeft);
-      displayScore();
+      timeLeft = timeLeft - 10;
+      result = "Wrong";
     }
+    $("#answers").append("<hr>");
+    $("hr").append("<p class='result'>" + result + "</p>");
+    setTimeout(function () {
+      page++;
+      displayQuestions(page);
+    }, 500);
   });
 
   $('.highscores').on("click", function (event) {
