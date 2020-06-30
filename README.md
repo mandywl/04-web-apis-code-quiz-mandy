@@ -1,4 +1,4 @@
-# 04-web-apis-code-quiz-mandy
+web-apis-code-quiz-mandy
 
 # Description 
 
