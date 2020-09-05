@@ -8,8 +8,7 @@ web-apis-code-quiz-mandy
 
 # Deployed url
 
-* https://github.com/mandywl/04-web-apis-code-quiz-mandy
-* https://mandywl.github.io/04-web-apis-code-quiz-mandy/
+* https://mandywl.github.io/web-apis-code-quiz-mandy/
 
 # Instructions
 
